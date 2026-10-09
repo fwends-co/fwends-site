@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fwends: a game fueled by social connection | Fwends LLC</title>
+<meta name="description" content="Fwends is a company that experiments with ways of bringing people together. Our first idea is a game fueled by social connection, where you earn items and shared memory cubes by connecting with friends in the app and in person.">
+<link rel="canonical" href="https://fwends.co/">
+<meta name="theme-color" content="#ecefec">
+<meta name="author" content="Fwends LLC">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/elms-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bitcount-single.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fwends">
+<meta property="og:title" content="Fwends: a game fueled by social connection | Fwends LLC">
+<meta property="og:description" content="Fwends is a company that experiments with ways of bringing people together. Our first idea is a game fueled by social connection, where you earn items and shared memory cubes by connecting with friends in the app and in person.">
+<meta property="og:url" content="https://fwends.co/">
+<meta property="og:image" content="https://fwends.co/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The fwends wordmark in green dots above the line: Meet up in person. Keep the memory.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fwends: a game fueled by social connection | Fwends LLC">
+<meta name="twitter:description" content="Fwends is a company that experiments with ways of bringing people together. Our first idea is a game fueled by social connection, where you earn items and shared memory cubes by connecting with friends in the app and in person.">
+<meta name="twitter:image" content="https://fwends.co/assets/og.png">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="wordmark" href="/" aria-label="Fwends home"><img src="/assets/fwends-logo.png" alt="fwends" height="24"></a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul><li><a href="#company">About</a></li><li><a href="/#contact">Contact</a></li></ul>
+      <a class="btn btn--primary btn--sm" href="/#waitlist">Waitlist coming soon</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero__copy">
+      <img class="hero__logo" src="/assets/fwends-logo.png" alt="fwends" width="2180" height="545">
+      <h1 class="display-hero" id="hero-title">An experimental brand focused on <span class="hl">connection</span></h1>
+      <p class="lead">Every idea launched is filtered through one question: does this leave people feeling more connected than they were before?</p>
+      <span class="eyebrow">built for friends, by friends</span>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="#waitlist">Waitlist coming soon</a>
+        <a class="btn btn--ghost btn--lg" href="#what">Our first idea <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--parchment" id="company" aria-labelledby="company-title">
+  <div class="container split split--aligned">
+    <div class="split__a section-head reveal">
+      <span class="eyebrow">why we exist</span>
+      <h2 class="display-lg" id="company-title">Technology keeps us online. We'd rather it keep us connected.</h2>
+    </div>
+    <p class="lead split__b reveal">Feeds, algorithms, and apps are tuned to hold attention, not build relationships. We build ideas that make people more human, not less.</p>
+    <img class="split__c reveal" src="/assets/fwend-character.png" alt="A fwend: a cream cube-bodied character with oval eyes and a glowing square on its chest" width="2157" height="2640">
+    <div class="split__d prose-block reveal">
+      <p>Some of our ideas will be small and short-lived. Some will last for years. All of them push community and connection forward, and all of them run through the same character, a fwend.</p>
+      <p>See one and you know something authentic happened there: a memory made with someone else, not alone. The goal isn't for Fwends to just be a brand people recognize. It's for the character to become synonymous with connection itself</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what" aria-labelledby="what-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">our first idea: the fwends app</span>
+      <h2 class="display-lg" id="what-title">A digital world fueled by real social connection.</h2>
+      <p class="lead">Fwends is a new genre of game where your world grows through the connections you make. Share something meaningful in the app, meet up in person, and each moment feeds your fwend and builds the world it lives in.</p>
+    </div>
+    <figure class="stage" role="img" aria-label="Illustration: two green dots travel across a dark dot grid, meet in the middle, and a square memory cube forms above them.">
+      <canvas id="stage-canvas" aria-hidden="true"></canvas>
+      <figcaption class="stage__hud" aria-hidden="true">
+        <span class="stage__status" id="stage-status">linked · together</span>
+        <span class="stage__legend"><span><i></i>you &amp; a fwend</span><span><i class="block"></i>memory cube</span></span>
+      </figcaption>
+    </figure>
+    <div class="cards">
+      <article class="card reveal">
+        <svg class="card__glyph" viewBox="0 0 7 7" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="0.5" cy="3.5" r="0.38"/><circle cx="1.5" cy="3.5" r="0.38"/><circle cx="2.5" cy="3.5" r="0.38"/><circle cx="4.5" cy="3.5" r="0.38"/><circle cx="5.5" cy="3.5" r="0.38"/><circle cx="6.5" cy="3.5" r="0.38"/><circle cx="3.5" cy="1.5" r="0.38"/><circle cx="3.5" cy="5.5" r="0.38"/><circle cx="2.5" cy="2.5" r="0.38"/><circle cx="4.5" cy="2.5" r="0.38"/><circle cx="2.5" cy="4.5" r="0.38"/><circle cx="4.5" cy="4.5" r="0.38"/></g></svg>
+        <span class="tag">in app + in person</span>
+        <h3>Connect your way</h3>
+        <p>Relationship based, in-app experiences, or meet up face to face. All experiences tied to building meaningful connection</p>
+      </article>
+      <article class="card card--fernwood reveal">
+        <svg class="card__glyph" viewBox="0 0 7 7" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="1.5" cy="1.5" r="0.4"/><circle cx="1.5" cy="2.5" r="0.4"/><circle cx="1.5" cy="3.5" r="0.4"/><circle cx="1.5" cy="4.5" r="0.4"/><circle cx="1.5" cy="5.5" r="0.4"/><circle cx="2.5" cy="1.5" r="0.4"/><circle cx="2.5" cy="5.5" r="0.4"/><circle cx="3.5" cy="1.5" r="0.4"/><circle cx="3.5" cy="5.5" r="0.4"/><circle cx="4.5" cy="1.5" r="0.4"/><circle cx="4.5" cy="5.5" r="0.4"/><circle cx="5.5" cy="1.5" r="0.4"/><circle cx="5.5" cy="2.5" r="0.4"/><circle cx="5.5" cy="3.5" r="0.4"/><circle cx="5.5" cy="4.5" r="0.4"/><circle cx="5.5" cy="5.5" r="0.4"/><circle cx="3.5" cy="3.5" r="0.4"/></g></svg>
+        <span class="tag">shared</span>
+        <h3>Memory cubes</h3>
+        <p>Every meetup forms a digital memory that both of you keep: when it happened, who was there, and a note or photo each of you can add</p>
+      </article>
+      <article class="card reveal">
+        <svg class="card__glyph" viewBox="0 0 7 7" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="3.5" cy="0.5" r="0.4"/><circle cx="2.5" cy="1.5" r="0.4"/><circle cx="4.5" cy="1.5" r="0.4"/><circle cx="1.5" cy="2.5" r="0.4"/><circle cx="5.5" cy="2.5" r="0.4"/><circle cx="0.5" cy="3.5" r="0.4"/><circle cx="6.5" cy="3.5" r="0.4"/><circle cx="1.5" cy="4.5" r="0.4"/><circle cx="5.5" cy="4.5" r="0.4"/><circle cx="2.5" cy="5.5" r="0.4"/><circle cx="4.5" cy="5.5" r="0.4"/><circle cx="3.5" cy="6.5" r="0.4"/><circle cx="3.5" cy="3.5" r="0.4"/></g></svg>
+        <span class="tag">earned</span>
+        <h3>Items</h3>
+        <p>Connecting earns you items for your fwend or your room, so each one has a memory behind it</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container split">
+    <div class="prose-block reveal">
+      <span class="eyebrow">contact</span>
+      <h2 class="display-lg" id="contact-title">Talk to the team.</h2>
+      <p class="lead">Questions, partnerships, press, or support.</p>
+    </div>
+    <div class="contact-card reveal">
+      <a class="email" href="mailto:friends@fwends.co">friends@fwends.co</a>
+      <div class="row-actions">
+        <a class="btn btn--primary" href="mailto:friends@fwends.co"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="2" y="3.5" width="12" height="9" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m2.8 4.6 5.2 4 5.2-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> Email us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="waitlist" aria-labelledby="waitlist-title" style="padding-top:0">
+  <div class="container">
+    <div class="band reveal">
+      <div>
+        <h2 class="display-md" id="waitlist-title">Want in early?</h2>
+        <p>The waitlist for Fwends on iPhone is coming soon.</p>
+      </div>
+      <div class="band__aside">
+        <a class="btn btn--utility btn--lg" href="mailto:friends@fwends.co?subject=Add%20me%20to%20the%20Fwends%20waitlist&body=Hi%20Fwends%20team%2C%0A%0APlease%20add%20this%20email%20address%20to%20the%20waitlist.%20Let%20me%20know%20when%20Fwends%20is%20ready%20for%20iPhone.%0A%0AThanks!"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="2" y="3.5" width="12" height="9" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m2.8 4.6 5.2 4 5.2-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> Waitlist coming soon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a class="wordmark" href="/" aria-label="Fwends home"><img src="/assets/fwends-logo.png" alt="fwends" height="28"></a>
+        <p class="site-footer__blurb">Fwends is a game fueled by social connection. Built and operated by Fwends LLC.</p>
+      </div>
+      <div>
+        <h2>company</h2>
+        <ul>
+          <li><a href="/#contact">Contact</a></li>
+          </ul>
+      </div>
+      <div>
+        <h2>legal</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="mailto:friends@fwends.co">friends@fwends.co</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <p>&copy; 2026 Fwends LLC. All rights reserved.</p>
+      <p>Fwends is a product of Fwends LLC.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
