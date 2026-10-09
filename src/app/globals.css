@@ -1,0 +1,357 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   FWENDS design tokens — the ONE place to tweak the look of the site.
+   Values are copied from FWENDS-design-system.md (tokens/*.css).
+   Rules worth remembering:
+   - Radioactive Grass (--color-primary) marks what is clickable. Nothing else.
+   - Fernwood is an object colour (cards, tags, blocks), never a page backdrop.
+   - Bright Snow carries every surface; Nightgrass is the one exception block.
+   - No gradients, no card shadows, no hover states, no weight 500.
+   ========================================================================== */
+:root {
+  /* Fonts (families are injected by next/font in layout.tsx) */
+  --font-display: var(--font-elms), system-ui, sans-serif;
+  --font-body: var(--font-elms), system-ui, sans-serif;
+  --font-game: var(--font-bitcount), ui-monospace, "SF Mono", monospace;
+
+  /* Brand & accent */
+  --color-primary: #11ff11; /* Radioactive Grass */
+  --color-primary-focus: #091d13; /* focus ring on light surfaces */
+  --color-nightgrass: #091d13; /* also the exact ink colour of the logo */
+  --color-fernwood: #15502b;
+
+  /* Ink & text */
+  --color-heading: #091d13;
+  --color-ink: #151715; /* Carbon Black: body copy */
+  --color-body-on-dark: #f7f7f7;
+  --color-body-muted: #ccd0ce; /* secondary copy on Nightgrass */
+  --color-disabled-fg: #4b524b;
+
+  /* Surfaces */
+  --color-canvas: #f7f7f7; /* Bright Snow */
+  --color-parchment: #ecefec;
+  --color-pearl: #fdfefd;
+  --color-surface-dark: #091d13;
+  --color-disabled-fill: #dfe3df;
+
+  /* Lines */
+  --color-hairline: #e0e0e0;
+  --color-hairline-on-dark: rgba(255, 255, 255, 0.1);
+
+  /* Radii */
+  --radius-xs: 5px;
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+
+  /* Spacing */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 17px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-section: 80px;
+  --container-text: 980px;
+  --container-grid: 1440px;
+  --size-touch-min: 44px;
+
+  /* Motion */
+  --press-scale: 0.95;
+  --duration-press: 120ms;
+  --duration-fade: 240ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Expose tokens as Tailwind utilities (bg-canvas, text-heading, rounded-card…) */
+@theme inline {
+  --color-canvas: var(--color-canvas);
+  --color-parchment: var(--color-parchment);
+  --color-pearl: var(--color-pearl);
+  --color-nightgrass: var(--color-nightgrass);
+  --color-fernwood: var(--color-fernwood);
+  --color-primary: var(--color-primary);
+  --color-heading: var(--color-heading);
+  --color-ink: var(--color-ink);
+  --color-hairline: var(--color-hairline);
+  --color-muted-on-dark: var(--color-body-muted);
+  --color-snow: var(--color-body-on-dark);
+  --radius-card: var(--radius-lg);
+  --font-sans: var(--font-body);
+  --font-game: var(--font-game);
+}
+
+/* ---------- Base ---------- */
+html {
+  background: var(--color-canvas);
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+  color: var(--color-heading);
+  font-weight: 600;
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+.on-dark :focus-visible {
+  outline-color: var(--color-primary); /* Nightgrass is 1.2:1 on itself */
+}
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  background: var(--color-heading);
+  color: var(--color-body-on-dark);
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-game);
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ---------- Type scale (design-system type tokens) ---------- */
+.t-hero {
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: -0.28px;
+  font-weight: 600;
+}
+.t-display {
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+.t-lead {
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: 0.196px;
+  font-weight: 400;
+}
+.t-lead-airy {
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 300;
+}
+.t-tagline {
+  font-size: 21px;
+  line-height: 1.19;
+  letter-spacing: 0.231px;
+  font-weight: 600;
+}
+.t-body-strong {
+  font-size: 17px;
+  line-height: 1.24;
+  font-weight: 600;
+}
+.t-caption {
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.224px;
+}
+.t-eyebrow {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 1.4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-heading);
+}
+.on-dark .t-eyebrow {
+  color: var(--color-primary);
+}
+.t-fine {
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.12px;
+}
+/* Bitcount Single: everything you press. Zero or positive tracking only. */
+.t-button {
+  font-family: var(--font-game);
+  font-size: 17px;
+  line-height: 1.24;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.t-button-utility {
+  font-family: var(--font-game);
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.t-dense-link {
+  font-family: var(--font-game);
+  font-size: 17px;
+  line-height: 2.41;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+@media (max-width: 833px) {
+  .t-hero {
+    font-size: 40px;
+  }
+}
+@media (max-width: 640px) {
+  .t-hero {
+    font-size: 34px;
+  }
+  .t-display {
+    font-size: 32px;
+  }
+  .t-lead-airy {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .t-hero {
+    font-size: 28px;
+  }
+  .t-display {
+    font-size: 28px;
+  }
+}
+
+/* ---------- Actions ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--size-touch-min);
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  border: 0;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: var(--color-nightgrass);
+  white-space: nowrap;
+  transition: transform var(--duration-press) var(--ease-standard);
+}
+.btn:active:not(:disabled) {
+  transform: scale(var(--press-scale));
+}
+.btn:disabled {
+  background: var(--color-disabled-fill);
+  color: var(--color-disabled-fg);
+  cursor: not-allowed;
+}
+/* Clickable text on a light surface: Grass sits behind the letters (14:1). */
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--size-touch-min);
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-nightgrass);
+  font-family: var(--font-game);
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0;
+  transition: transform var(--duration-press) var(--ease-standard);
+}
+.link-chip:active {
+  transform: scale(var(--press-scale));
+}
+
+/* ---------- Forms ---------- */
+.field {
+  width: 100%;
+  min-height: var(--size-touch-min);
+  padding: 12px 20px;
+  background: #ffffff;
+  color: var(--color-ink);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 17px;
+  letter-spacing: -0.374px;
+}
+.field::placeholder {
+  color: #5f635f;
+}
+.field[aria-invalid="true"] {
+  border: 2px solid var(--color-nightgrass);
+  padding: 11px 19px;
+}
+
+/* ---------- Surfaces ---------- */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+.container-text {
+  max-width: var(--container-text);
+  margin-inline: auto;
+}
+.container-grid {
+  max-width: var(--container-grid);
+  margin-inline: auto;
+}
+.section {
+  padding-block: var(--space-section);
+  padding-inline: var(--space-lg);
+}
+@media (max-width: 640px) {
+  .section {
+    padding-block: var(--space-xxl);
+  }
+}
+/* The one exception surface: an inset Nightgrass block on the snow field. */
+.dark-block {
+  background: var(--color-surface-dark);
+  color: var(--color-body-on-dark);
+  border-radius: 0;
+}
+.dark-block h2,
+.dark-block h3 {
+  color: var(--color-body-on-dark);
+}
+
+/* ---------- Legal pages ---------- */
+.legal h2 {
+  font-size: 21px;
+  line-height: 1.19;
+  letter-spacing: 0.231px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+.legal p,
+.legal li {
+  margin-bottom: 12px;
+}
+.legal ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
